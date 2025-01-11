@@ -43,9 +43,6 @@ public class HuffmanCompress {
 			System.out.println(
 					(char) i + ": freq=" + frequencies[i] + " huffman code=" + huff[i] + " length=" + lengths[i]);
 		}
-//		System.out.println("# of leaves= " + countLeaves());
-//		System.out.println("# of parents= " + countParents());
-
 		createCompressedFile();
 		System.out.println("numberOfChars: " + numberOfChars);
 	}
@@ -54,15 +51,11 @@ public class HuffmanCompress {
 	private void getFrequenciesFromFile() {
 		try {
 			BufferedInputStream inStream = new BufferedInputStream(new FileInputStream(originalFile));
-//			BufferedOutputStream outStream = new BufferedOutputStream(new FileOutputStream(originalFile.getPath()
-//					.replaceAll(getFileExtension(originalFile), "2" + getFileExtension(originalFile))));
 			int val;
 			while ((val = inStream.read()) != -1) {
 				frequencies[val]++;
-//				outStream.write(val);
 			}
 			inStream.close();
-//			outStream.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -109,30 +102,6 @@ public class HuffmanCompress {
 
 		this.originalFileSize = root.getFreq();
 	}
-
-//	// helper recursive method
-//	private void encode(TNode<Integer> node, byte encoding, int depth) {
-//		if (node.isLeaf()) {
-//			huff[node.getData()] = encoding;
-//			lengths[node.getData()] = (depth);
-//			return;
-//		}
-//
-//		if (node.hasLeft()) {
-//			byte new_encoding = encoding;
-//			if (node != root)
-//				new_encoding = (byte) (encoding << 1); // shift left by 1 digit
-//			encode(node.getLeft(), new_encoding, (depth + 1));
-//		}
-//
-//		if (node.hasRight()) {
-//			byte new_encoding;
-//			if (node != root)
-//				new_encoding = (byte) (encoding << 1); // shift left by 1 digit
-//			new_encoding = (byte) (encoding | 1); // the least significant bit is 1
-//			encode(node.getRight(), new_encoding, (depth + 1));
-//		}
-//	}
 
 	// helper recursive method
 	private void encode(TNode<Character> node, String encoding, int depth) {
@@ -197,8 +166,7 @@ public class HuffmanCompress {
 		}
 	}
 
-	// read the file to be compressed for the second time, this time for writing on
-	// compressed file
+	// read the file to be compressed for the second time, this time for writing on compressed file
 	private void writeDataToCompressedFile(BufferedOutputStream outStream) {
 		buffer = new byte[8];
 		refillBufferWithZeros();
@@ -206,8 +174,6 @@ public class HuffmanCompress {
 		try {
 			BufferedInputStream inStream = new BufferedInputStream(new FileInputStream(originalFile));
 			System.out.println("file extension: " + getFileExtension(originalFile));
-//			BufferedOutputStream outStream = new BufferedOutputStream(new FileOutputStream(
-//					originalFile.getName().replaceAll(getFileExtension(originalFile), ".huf"), true));
 			int val;
 			while ((val = inStream.read()) != -1) {
 				int byteNumber = pointer / 8;
@@ -227,7 +193,6 @@ public class HuffmanCompress {
 					bitValue = (byte) (bitValue << (7 - bitNumber));
 					buffer[byteNumber] = (byte) (buffer[byteNumber] | bitValue);
 					pointer++;
-//					System.out.println("pointer: "+ pointer);
 					byteNumber = pointer / 8;
 					bitNumber = pointer % 8;
 				}
@@ -236,15 +201,12 @@ public class HuffmanCompress {
 					outStream.write(buffer);
 					refillBufferWithZeros();
 					pointer = 0;
-//					System.out.println("pointer: "+ pointer);
 				}
 
 			}
 			// store into the compressed file
 			if (pointer != 0)
 				outStream.write(buffer, 0, ((pointer / 8) + 1));
-//			System.out.println("count = " + (count + 1));
-
 			inStream.close();
 			outStream.close();
 		} catch (IOException e) {
@@ -297,8 +259,7 @@ public class HuffmanCompress {
 		return name.substring(index);
 	}
 
-	// this method creates the huffman coding tree to be written in the header in
-	// the compressed file
+	// this method creates the huffman coding tree to be written in the header in the compressed file
 	public String CreateHuffmanCodingTree() {
 		return traversePostOrder(root) + 0;
 	}
@@ -324,16 +285,6 @@ public class HuffmanCompress {
 	// this method returns the size of header in bytes
 	public int getHeaderSize() {
 		return (int) (countLeaves() + Math.ceil((countLeaves() + countParents() + 1) / 8.0)); // leaves will be written
-																								// as bytes, 1's and 0's
-																								// as bits such that the
-																								// number of 1's = the
-																								// number of leaves, and
-																								// the number of 0's =
-																								// the number of parents
-																								// + 1 (the end of
-																								// huffman coding tree)
-
-//		return numberOfChars + (((2*numberOfChars))/8); 
 	}
 
 	private String getBinaryRepresnetation(int val) {
