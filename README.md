@@ -3,17 +3,21 @@
 ## Overview
 This project focuses on implementing Huffman Coding, a widely used lossless data compression algorithm. The goal is to efficiently compress and uncompress files by assigning variable-length codes to characters based on their frequencies. Characters that occur more frequently are assigned shorter codes, while less frequent characters are given longer codes.
 
-The header of the compressed file contains:
+<br>
+
+**The header of the compressed file contains**:
 - File extension.
 - Original fils size (bytes).
 - Header size (bytes).
 - Huffman coding tree structure (in post-order manner).
 
-The statistics table shows for each byte (0-255):
+**The statistics table shows for each byte (0-255)**:
 - ASCII value.
 - Frequency.
 - Huffman code.
 - Length of the Huffman code.
+
+<br>
 
 ## Screenshots of the Run
 
