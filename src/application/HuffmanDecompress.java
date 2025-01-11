@@ -43,21 +43,12 @@ public class HuffmanDecompress {
 			buildHuffmanTree(inStream); // build huffman tree by reading the header information
 			System.out.println("wwwwwwwww");
 			traversePostOrder();
-//			System.out.println(CreateHuffmanCodingTree());
 			readCompressedData(inStream); // read data for decompression
 			inStream.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
-
-//	// values from bitNumber = 0 to this bit number, keep them as they are
-//	byte val2 = 0;
-//	for (int j = 0; j < 8 - bitNumber; j++) {
-//		val2 = (byte) (val2 << 1);  // shift left
-//		val2 = (byte) (val2 | 1); // make first digit = 1 
-//	}
-//	newVal = (byte) (newVal & val2);
 
 	public void traversePostOrder() {
 		traversePostOrder(root);
@@ -79,13 +70,11 @@ public class HuffmanDecompress {
 			inStream.read(buffer);
 			int pointer = 0;
 			int count = 0;
-			while (pointer < (((sizeOfHeader * 8) / 10) * 10) - 1) { // while (pointer < (sizeOfHeader * 8) - 5) ? //
-																		// ((sizeOfHeader * 8) / 10) * 10
+			while (pointer < (((sizeOfHeader * 8) / 10) * 10) - 1) {
 				System.out.println("pointer: " + pointer);
 				int byteNumber = pointer / 8;
 				int bitNumber = pointer % 8;
 				byte temp = (byte) (buffer[byteNumber] << bitNumber);
-//				System.out.println("bitNumber= " + bitNumber);
 				temp = (byte) (temp >> 7); // we need only the bit to which the pointer points (0 or 1)
 				temp = (byte) (temp & 1);
 				System.out.println("temp = " + temp);
@@ -104,11 +93,9 @@ public class HuffmanDecompress {
 					pointer++; // to start reading the next character
 					byteNumber = pointer / 8;
 					bitNumber = pointer % 8;
-//					System.out.println(bitNumber);
 					int firstVal = (buffer[byteNumber] << bitNumber);
 					int numberOfRemainingBits = bitNumber;
 					if (numberOfRemainingBits > 0) {
-//						pointer += (8 - numberOfRemainingBits); // move pointer to the beginning of the next byte
 						byteNumber += 1;
 						pointer = byteNumber * 8; 
 						bitNumber = 0; // will be zero
@@ -135,15 +122,10 @@ public class HuffmanDecompress {
 						pointer += 8;
 					}
 				}
-//				System.out.println(stack.peek());
 			}
 			root = stack.pop(); // tree is created
 			System.out.println("root = " + root);
 			System.out.println(stack.pop());
-//			System.out.println(stack.pop());
-//			System.out.println(stack.pop());
-//			System.out.println(stack.pop());
-//			System.out.println(stack.pop());
 
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -154,18 +136,12 @@ public class HuffmanDecompress {
 	private void readCompressedData(DataInputStream inStream) {
 		TNode<Integer> currNode = root;
 		try (
-//			File decompressedFile = new File(compressedFile.getName().replace(getFileExtension(compressedFile), originalFileExtension));
 				BufferedOutputStream outStream = new BufferedOutputStream(new FileOutputStream(new File(
 						compressedFile.getName().replace(getFileExtension(compressedFile), originalFileExtension))));) {
 			buffer = new byte[8];
 			refillBufferWithZeros();
 			inStream.read(buffer);
 
-//			System.out.println("\nPlease work!");
-//			for(int i = 0; i < buffer.length; i++) {
-//				System.out.print(buffer[i] + " ");
-//			}
-//			System.out.println();
 			System.out.println("sizeOfOriginalFile: " + sizeOfOriginalFile);
 
 			int charNo = 0;
@@ -174,9 +150,6 @@ public class HuffmanDecompress {
 				while (pointer < (buffer.length * 8) - 1) {
 
 					pointer++;
-
-//					if (currNode == null)
-//						continue;
 
 					if (currNode.isLeaf()) {
 						charNo++;
