@@ -1,5 +1,7 @@
 # Compressing Files With Huffman 📂
 
+[Project Description 🧾](https://github.com/Lina-Abureesh4/AlgorithmsProj2/blob/master/Project2_Huffman%2BCode.pdf)
+
 ## Overview
 This project focuses on implementing Huffman Coding, a widely used lossless data compression algorithm. The goal is to efficiently compress and uncompress files by assigning variable-length codes to characters based on their frequencies. Characters that occur more frequently are assigned shorter codes, while less frequent characters are given longer codes.
 
