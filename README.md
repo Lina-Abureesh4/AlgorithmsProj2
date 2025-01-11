@@ -1,4 +1,4 @@
-# Compressing Files With Huffman 📂
+# File Compression Using Huffman Coding 📂
 
 [Project Description 🧾](https://github.com/Lina-Abureesh4/AlgorithmsProj2/blob/master/Project2_Huffman%2BCode.pdf)
 
