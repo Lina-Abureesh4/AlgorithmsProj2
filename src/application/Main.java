@@ -3,11 +3,6 @@ package application;
 import java.io.File;
 import java.util.Arrays;
 import java.util.List;
-
-//import java.io.BufferedInputStream;
-//import java.io.FileInputStream;
-//import java.io.IOException;
-
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -40,11 +35,6 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 
 public class Main extends Application {
-//	private static String path = "C:\\Users\\user\\AppData\\Roaming\\Microsoft\\Windows\\Network Shortcuts\\answers.dat";
-//	private static BufferedInputStream originalFile;
-//	private static int[] frequencies;
-//	private static int numberOfChars;
-//	private static TNode<Integer> root;
 	private Button btnCompress1 = new Button("Compress");
 	private Button btnDecompress1 = new Button("Decompress");
 	private Stage primaryStage;
@@ -59,8 +49,6 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-//			BorderPane root = new BorderPane();
-//			Scene scene = new Scene(root, 400, 400);
 			Scene scene = mainInterface();
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 
@@ -92,97 +80,10 @@ public class Main extends Application {
 	}
 
 	public static void main(String[] args) {
-//		readFile();
-//		printArray(frequencies);
-//		buildHuffmanTree();
-
-//		HuffmanCompress huff = new HuffmanCompress(
-//				"C:\\Users\\user\\AppData\\Roaming\\Microsoft\\Windows\\Network Shortcuts\\answers.dat");
-//
-//		HuffmanDecompress huffDe = new HuffmanDecompress(
-//				"C:\\Users\\user\\Desktop\\lina\\eclipse\\Algorithms_projII\\answers.huf");
-
-//		HuffmanCompress huff4 = new HuffmanCompress(
-//				"C:\\Users\\user\\AppData\\Roaming\\Microsoft\\Windows\\Network Shortcuts\\try.dat");
-//
-//		HuffmanDecompress huffDe4 = new HuffmanDecompress(
-//				"C:\\Users\\user\\Desktop\\lina\\eclipse\\Algorithms_projII\\try.huf");
-//		
-//		boolean flag = true;
-//		for(int i = 0; i < 8; i++) {
-//			if(huff.getBuffer()[i] != huffDe.getBuffer()[i]) {
-//				flag = false;
-//				break;
-//			}
-//			System.out.println("flag = " + flag);
-//		}
-
-//		System.out.println("h");
-
-//		for(int i = 0; i < 8; i++) {
-//			System.out.print(huff.getBuffer()[i] + " ");
-//		}
-//		System.out.println();
-//		
-//		for(int i = 0; i < 8; i++) {
-//			System.out.print(huffDe.getBuffer()[i] + " ");
-//		}
-		
-//		HuffmanCompress huff6 = new HuffmanCompress("C:\\Users\\user\\Desktop\\HuffmanCompress.txt");
-//		HuffmanDecompress huffDe6 = new HuffmanDecompress(
-//				"C:\\Users\\user\\Desktop\\lina\\eclipse\\Algorithms_projII\\HuffmanCompress.huf");
-				
-//		HuffmanCompress huff2 = new HuffmanCompress("C:\\Users\\user\\Desktop\\myimg.png");
-//		System.out.println("No. of chars: " + huff2.getNumberOfChars());
-//		HuffmanDecompress huffDe2 = new HuffmanDecompress(
-//				"C:\\Users\\user\\Desktop\\lina\\eclipse\\Algorithms_projII\\myimg.huf");
-
-//		HuffmanCompress huff5 = new HuffmanCompress("C:\\Users\\user\\Desktop\\img.png");
-//		HuffmanDecompress huffDe5 = new HuffmanDecompress("C:\\Users\\user\\Desktop\\lina\\eclipse\\Algorithms_projII\\img.huf");
-
-
-//		for(int i = 0; i < 8; i++) {
-//			System.out.print(huff6.getBuffer()[i] + " ");
-//		}
-//		System.out.println("\n");
-//		
-//		for(int i = 0; i < 8; i++) {
-//			System.out.print(huffDe6.getBuffer()[i] + " ");
-//		}
-
-//		HuffmanCompress huff3 = new HuffmanCompress("C:\\Users\\user\\Desktop\\text.txt");
-//		HuffmanDecompress huffDe3 = new HuffmanDecompress(
-//				"C:\\Users\\user\\Desktop\\lina\\eclipse\\Algorithms_projII\\text.huf");
-
-//		HuffmanCompressing huff = new HuffmanCompressing("C:\\Users\\user\\Downloads\\ds_salaries.csv", true);
-
-//		HuffmanCompressing huff = new HuffmanCompressing("C:\\Users\\user\\Downloads\\archive.zip", true);
-
-//		HuffmanCompress huff = new HuffmanCompress("C:\\Users\\user\\Downloads\\Untitled-2.py");
-
-//		HuffmanCompressing huff = new HuffmanCompressing("C:\\Users\\user\\Downloads\\Assignemt No. 4.ipynb", true);
-
-//		HuffmanCompress huff = new HuffmanCompress("C:\\Users\\user\\Documents\\Sound recordings\\Recording.m4a");
-//		HuffmanDecompress huffDe = new HuffmanDecompress(
-//				"C:\\Users\\user\\Desktop\\lina\\eclipse\\Algorithms_projII\\Recording.huf");
-
-//		HuffmanCompressing huff = new HuffmanCompressing("C:\\Users\\user\\Desktop\\lina\\Java2\\phase1\\LibraryMember.java", true);
-
-//		HuffmanCompress huff00 = new HuffmanCompress("C:\\Users\\user\\Videos\\Captures\\ 2024-05-01 18-02-20.mp4");
-//		System.out.println("char at 506: " + huff00.CreateHuffmanCodingTree().charAt(506));
-//		HuffmanDecompress huffDe00 = new HuffmanDecompress(
-//				"C:\\Users\\user\\Desktop\\lina\\eclipse\\Algorithms_projII\\ 2024-05-01 18-02-20.huf");
-
-//		HuffmanCompress huff7 = new HuffmanCompress(
-//				"C:\\Users\\user\\Downloads\\android-studio-2023.2.1.23-windows.exe");
-//		HuffmanDecompress huffDe7 = new HuffmanDecompress(
-//				"C:\\Users\\user\\Desktop\\lina\\eclipse\\Algorithms_projII\\android-studio-2023.2.1.23-windows.huf");
-		System.out.println("It worked!");
 		launch(args);
 	}
 
 	private Scene mainInterface() {
-
 		// root pane
 		StackPane rootPane = new StackPane();
 
@@ -218,7 +119,6 @@ public class Main extends Application {
 
 		Label lblTitle = new Label("Huffman Code: The Way Into Effective Data Compression");
 		lblTitle.setFont(Font.font("Lucida Calligraphy", FontWeight.BOLD, 40));
-//		lblTitle.setTextFill(Color.WHITE);
 		lblTitle.setAlignment(Pos.CENTER);
 
 		HBox lblBox = new HBox();
@@ -233,7 +133,6 @@ public class Main extends Application {
 	}
 
 	private Stage compressScreen() {
-
 		// create rootPane
 		StackPane rootPane = new StackPane();
 
@@ -292,7 +191,6 @@ public class Main extends Application {
 
 		VBox box = new VBox(100);
 		box.setAlignment(Pos.CENTER);
-//		box.getChildren().addAll(gridPane);
 
 		HBox buttonsBox = new HBox(5);
 		buttonsBox.setAlignment(Pos.CENTER);
@@ -305,15 +203,6 @@ public class Main extends Application {
 
 		buttonsBox.getChildren().addAll(btnStatistics, btnHeader);
 		box.getChildren().add(buttonsBox);
-
-//		TextArea txAreaHeader = new TextArea(); 
-//		txAreaHeader.setEditable(false);
-//		txAreaHeader.maxHeightProperty().bind(rootPane.heightProperty().divide(10));
-//		txAreaHeader.maxWidthProperty().bind(rootPane.widthProperty().divide(1.5));
-//		txAreaHeader.setPromptText("Click 'Show Header' button to view the header of the compressed file");
-//		txAreaHeader.setDisable(true);
-
-//		box.getChildren().add(txAreaHeader);
 
 		btnStatistics.setDisable(true);
 		btnHeader.setDisable(true);
@@ -408,15 +297,10 @@ public class Main extends Application {
 		stage.initOwner(owner);
 		stage.initModality(modality);
 
-//		Pane rootPane = new Pane();
-//		rootPane.setStyle("-fx-background-color: white;");
-
 		String codingTree = compress.CreateHuffmanCodingTree();
 
 		TextArea txtAreaHeader = new TextArea();
 		txtAreaHeader.setEditable(false);
-//		txtAreaHeader.maxHeightProperty().bind(rootPane.heightProperty().divide(15));
-//		txtAreaHeader.maxWidthProperty().bind(rootPane.widthProperty().divide(5));
 
 		String txtFileExtent = compress.getOriginalFileExtension() + "\n";
 		String txtFileSize = compress.getOriginalFileSize() + "\n";
@@ -435,13 +319,6 @@ public class Main extends Application {
 		lblHeader.setFont(Font.font("Times New Roman", FontWeight.NORMAL, 15));
 		box.getChildren().addAll(lblHeader, txtAreaHeader);
 		box.setPadding(new Insets(20));
-//		rootPane.getChildren().add(box); 
-
-//		txtAreaHeader.setDisable(true);
-
-//		rootPane.getChildren().add(txtAreaHeader);
-//		
-//		rootPane.setPrefSize(500, 500);
 		stage.setScene(new Scene(box));
 		stage.show();
 	}
@@ -505,9 +382,6 @@ public class Main extends Application {
 
 		rootPane.setCenter(table);
 
-//		stage.setFullScreenExitHint("");
-//		stage.setFullScreen(true);
-//		rootPane.setPrefSize(stage.getWidth()-10, stage.getHeight()-10);
 		Scene scene = new Scene(rootPane);
 		stage.setScene(scene);
 		stage.show();
